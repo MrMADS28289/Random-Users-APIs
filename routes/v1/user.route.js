@@ -38,6 +38,22 @@ router
    */
   .get(usersControllers.getAllUsers)
 
+router
+  .route("/save")
+  /**
+   * @api {get} /user/save save a user
+   * @apiDescription save a user
+   * @apiPermission anyone
+   *
+   * @apiHeader {String} Authorization   User's access token
+   *
+   * @apiSuccess [{Object}] save a user in a array of object.
+   *
+   * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
+   * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
+   */
+  .post(usersControllers.saveAUser)
+
 //   /**
 //    * @api {post} /tools save a tool
 //    * @apiDescription Get all the tools

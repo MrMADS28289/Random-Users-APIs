@@ -1,13 +1,22 @@
 const users = require('../public/data.json');
 
-module.exports.getRandomUser = (req, res, next) => {
+module.exports.getRandomUser = (req, res) => {
   var randomUser = users[Math.floor(Math.random() * users.length)];
   res.json(randomUser);
 };
 
-module.exports.getAllUsers = (req, res, next) => {
+module.exports.getAllUsers = (req, res) => {
   const { limit } = req.query;
   res.json(users.slice(0, limit));
+};
+
+module.exports.saveAUser = (req, res) => {
+  const newUser = req.body;
+  users.push(newUser);
+  res.send({
+    message: 'New user added success',
+    newUser
+  });
 };
 
 // module.exports.saveATool = (req, res) => {
