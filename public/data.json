@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "gender": "male",
+        "name": "pp Alex",
+        "contact": "+9999999999",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "photoUrl": "https://i.ibb.co/wYvTgB9/forminator-summary-2x.png"
+    },
+    {
+        "id": 2,
+        "gender": "male",
+        "name": "Ervin Howell",
+        "contact": "+9999999999",
+        "address": {
+            "street": "Victor Plains",
+            "suite": "Suite 879",
+            "city": "Wisokyburgh",
+            "zipcode": "90566-7771",
+            "geo": {
+                "lat": "-43.9509",
+                "lng": "-34.4618"
+            }
+        },
+        "photoUrl": "https://i.ibb.co/wYvTgB9/forminator-summary-2x.png"
+    },
+    {
+        "id": 3,
+        "gender": "female",
+        "name": "Clementine Bauch",
+        "contact": "+9999999999",
+        "address": {
+            "street": "Douglas Extension",
+            "suite": "Suite 847",
+            "city": "McKenziehaven",
+            "zipcode": "59590-4157",
+            "geo": {
+                "lat": "-68.6102",
+                "lng": "-47.0653"
+            }
+        },
+        "photoUrl": "https://i.ibb.co/wYvTgB9/forminator-summary-2x.png"
+    },
+    {
+        "id": 4,
+        "gender": "female",
+        "name": "Chelsey Dietrich",
+        "contact": "+9999999999",
+        "address": {
+            "street": "Skiles Walks",
+            "suite": "Suite 351",
+            "city": "Roscoeview",
+            "zipcode": "33263",
+            "geo": {
+                "lat": "-31.8129",
+                "lng": "62.5342"
+            }
+        },
+        "photoUrl": "https://i.ibb.co/wYvTgB9/forminator-summary-2x.png"
+    }
+]
