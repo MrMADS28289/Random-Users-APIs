@@ -1,5 +1,10 @@
 const users = require('../public/data.json');
 
+module.exports.getRandomUser = (req, res, next) => {
+  var randomUser = users[Math.floor(Math.random() * users.length)];
+  res.json(randomUser);
+};
+
 module.exports.getAllUsers = (req, res, next) => {
   const { limit } = req.query;
   res.json(users.slice(0, limit));

@@ -12,10 +12,11 @@ app.use(express.json());
 
 dbConnect();
 
-app.use("/api/v1/user/all", userRoutes);
+app.use("/api/v1/user", userRoutes);
+// app.use("/api/v2/user/random", userRoutes);
 
 app.get("/", (req, res) => {
-  res.send('Welcome to random users apis');
+  res.send('Welcome to random users APIs');
 });
 
 app.all("*", (req, res) => {
