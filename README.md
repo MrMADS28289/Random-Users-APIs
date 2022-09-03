@@ -3,3 +3,5 @@
 * get a random user using /api/v1/user/random
 
 * save a user using /api/v1/user/save
+
+* update a user using /api/v1/user/update

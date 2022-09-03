@@ -13,8 +13,6 @@ app.use(express.json());
 dbConnect();
 
 app.use("/api/v1/user", userRoutes);
-const users = require('./public/data.json');
-// console.log(users);
 
 app.get("/", (req, res) => {
   res.send('Welcome to random users APIs');

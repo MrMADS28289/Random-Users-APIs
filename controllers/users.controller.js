@@ -41,19 +41,23 @@ module.exports.saveAUser = (req, res) => {
 //   // });
 // };
 
-// module.exports.updateTool = (req, res) => {
-//   // const newData = req.body;
-//   const { id } = req.params;
-//   const filter = { _id: id };
+module.exports.updateUser = (req, res) => {
+  const newData = req.body;
+  const { id } = req.params;
+  const existData = users.find(user => user.id === Number(id));
 
-//   const newData = tools.find(tool => tool.id === Number(id));
-
-//   newData.id = id;
-//   newData.name = req.body.name;
-
-//   res.send(newData);
-
-// };
+  if (existData) {
+    existData.id = newData.id;
+    existData.name = newData.name;
+    existData.contact = newData.contact;
+    res.send({
+      message: 'data update success',
+      newData
+    });
+  } else {
+    res.send('invalid id, Please give a valid id')
+  }
+};
 
 // module.exports.deleteTool = (req, res) => {
 //   const { id } = req.params;

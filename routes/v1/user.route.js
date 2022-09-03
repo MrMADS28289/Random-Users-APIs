@@ -17,7 +17,7 @@ router
  * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
  * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
  */
-  .get(usersControllers.getRandomUser)
+  .get(usersControllers.getRandomUser);
 
 router
   .route("/all")
@@ -36,7 +36,7 @@ router
    * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
    * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
    */
-  .get(usersControllers.getAllUsers)
+  .get(usersControllers.getAllUsers);
 
 router
   .route("/save")
@@ -52,7 +52,7 @@ router
    * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
    * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
    */
-  .post(usersControllers.saveAUser)
+  .post(usersControllers.saveAUser);
 
 //   /**
 //    * @api {post} /tools save a tool
@@ -71,10 +71,21 @@ router
 //    */
 //   .post(usersControllers.saveATool);
 
-// router
-//   .route("/:id")
-//   .get(viewCount, limiter, toolsControllers.getToolDetail)
-//   .patch(toolsControllers.updateTool)
-//   .delete(toolsControllers.deleteTool);
+router
+  .route("/update/:id")
+  /**
+ * @api {get} /user/update/id update a user
+ * @apiDescription update a user
+ * @apiPermission anyone
+ *
+ * @apiHeader {String} Authorization   User's access token
+ *
+ * @apiSuccess [{Object}] save a user in a array of object.
+ *
+ * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
+ * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
+ */
+  .patch(usersControllers.updateUser)
+// .delete(toolsControllers.deleteUser);
 
 module.exports = router;
