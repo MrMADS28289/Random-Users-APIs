@@ -19,28 +19,6 @@ module.exports.saveAUser = (req, res) => {
   });
 };
 
-// module.exports.saveATool = (req, res) => {
-//   console.log(req.query);
-//   tools.push(req.body);
-//   res.send(tools);
-// };
-
-// module.exports.getToolDetail = (req, res) => {
-//   const { id } = req.params;
-//   console.log(id);
-//   // const filter = {_id: id};
-//   const foundTool = tools.find(tool => tool.id === Number(id));
-//   res.status(200).send({
-//     success: true,
-//     messages: "Success",
-//     data: foundTool
-//   });
-//   // res.status(500).send({
-//   //   success: false,
-//   //   error: "Internal server error."
-//   // });
-// };
-
 module.exports.updateUser = (req, res) => {
   const newData = req.body;
   const { id } = req.params;
@@ -79,15 +57,22 @@ module.exports.updateUsers = (req, res) => {
       });
     });
   } else {
-    res.send('invalid data, Please give a valid data')
+    res.send('invalid data, Please give a valid data');
   };
 };
 
-// module.exports.deleteTool = (req, res) => {
-//   const { id } = req.params;
-//   const filter = { _id: id };
+module.exports.deleteUser = (req, res) => {
+  const { id } = req.params;
+  const filter = users.find(user => user.id === Number(id));
 
-//   tools = tools.filter(tool => tool.id !== Number(id));
+  if (filter) {
+    users.pop(filter);
 
-//   res.send(tools);
-// };
+    res.send({
+      message: 'user delete success',
+      filter
+    });
+  } else {
+    res.send('this id is not exist, Please give a valid id');
+  };
+};
