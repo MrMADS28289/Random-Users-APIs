@@ -59,6 +59,30 @@ module.exports.updateUser = (req, res) => {
   }
 };
 
+module.exports.updateUsers = (req, res) => {
+  const { ids, data } = req.body;
+  let updatedata = [];
+
+  for (let i = 0; i < ids.length; i++) {
+    const existData = users.find(user => user.id === Number(ids[i]));
+    updatedata.push(existData);
+  };
+
+  if (data) {
+    updatedata.map(user => {
+      user.id = data.id;
+      user.name = data.name;
+      user.contact = data.contact;
+      res.send({
+        message: 'data update success',
+        data
+      });
+    });
+  } else {
+    res.send('invalid data, Please give a valid data')
+  };
+};
+
 // module.exports.deleteTool = (req, res) => {
 //   const { id } = req.params;
 //   const filter = { _id: id };

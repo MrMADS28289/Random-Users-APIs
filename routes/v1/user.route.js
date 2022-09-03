@@ -85,7 +85,22 @@ router
  * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
  * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
  */
-  .patch(usersControllers.updateUser)
-// .delete(toolsControllers.deleteUser);
+  .patch(usersControllers.updateUser);
+
+router
+  .route("/bulk-update")
+  /**
+ * @api {get} /user/bulk-update update all users
+ * @apiDescription update all users
+ * @apiPermission anyone
+ *
+ * @apiHeader {String} Authorization   User's access token
+ *
+ * @apiSuccess [{Object}] save a user in a array of object.
+ *
+ * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
+ * @apiError (Forbidden 403)     Forbidden     Only admins can access the data
+ */
+  .patch(usersControllers.updateUsers);
 
 module.exports = router;
